@@ -33,7 +33,7 @@ const verifyToken = (req, res, next) => {
 
 //get all todos
 app.get('/todos', async (req, res) => {
-  const userEmail = req.get('X-User-Email'); // Retrieve user's email from the custom header
+  const userEmail = req.userEmail;
 
   console.log('User Email:', userEmail);
 

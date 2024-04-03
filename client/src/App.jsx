@@ -21,7 +21,6 @@ function App() {
         {
           headers: {
             authorization: authToken,
-            'X-User-Email': userEmail,
           },
         }
       );
