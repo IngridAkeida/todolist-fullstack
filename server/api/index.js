@@ -35,15 +35,11 @@ const verifyToken = (req, res, next) => {
 };
 
 //get all todos
-app.get('/todos', async (req, res) => {
-  const userEmail = req.get('X-User-Email'); // Retrieve user's email from the custom header
-
-  console.log('User Email:', userEmail);
-
+app.get('/todos', verifyToken, async (req, res) => {
   try {
     const todos = await pool.query(
       'SELECT * FROM todos WHERE user_email = $1',
-      [userEmail]
+      [req.userEmail]
     );
     res.json(todos.rows);
   } catch (err) {
