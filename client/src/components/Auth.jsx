@@ -3,7 +3,7 @@ import { useCookies } from 'react-cookie';
 
 import '../styles/Auth.css';
 const serverUrl = import.meta.env.VITE_SERVER_URL;
-
+// const serverUrl = 'http://localhost:5000';
 const Auth = () => {
   const [error, setError] = useState(false);
   const [email, setEmail] = useState('');
