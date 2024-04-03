@@ -31,11 +31,14 @@ const Auth = () => {
       setError("Passwords don't match");
       return;
     }
-    const response = await fetch(`${serverUrl}/${endpoint}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password }),
-    });
+    const response = await fetch(
+      `https://todolist-fullstack-five.vercel.app/${endpoint}`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      }
+    );
 
     const data = await response.json();
 

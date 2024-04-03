@@ -16,12 +16,15 @@ function App() {
 
   const getData = async () => {
     try {
-      const response = await fetch(`${serverUrl}/todos`, {
-        headers: {
-          authorization: authToken,
-          'X-User-Email': userEmail,
-        },
-      });
+      const response = await fetch(
+        `https://todolist-fullstack-five.vercel.app/todos`,
+        {
+          headers: {
+            authorization: authToken,
+            'X-User-Email': userEmail,
+          },
+        }
+      );
       const json = await response.json();
       setTask(json);
     } catch (err) {
