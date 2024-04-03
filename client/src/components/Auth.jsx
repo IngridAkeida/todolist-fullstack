@@ -79,7 +79,7 @@ const Auth = () => {
             {error && <p>{error}</p>}
             <div className='auth-option-signup'>
               <p className='text-auth'>
-                Don't you already have an account?{' '}
+                Don&apos;t you already have an account?{' '}
                 <button
                   className='signup-button'
                   onClick={() => viewLogin(false)}
