@@ -16,7 +16,7 @@ function App() {
 
   const getData = async () => {
     try {
-      const response = await fetch(`http://localhost:8000/todos`, {
+      const response = await fetch(`${serverUrl}/todos`, {
         headers: {
           authorization: authToken,
           'X-User-Email': userEmail,

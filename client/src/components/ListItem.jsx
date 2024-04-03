@@ -14,16 +14,13 @@ function ListItem({ task, getData }) {
 
   const deleteItem = async () => {
     try {
-      const response = await fetch(
-        `http://localhost:8000/todos/${task.id}`,
-        {
-          method: 'DELETE',
-          headers: {
-            'Content-Type': 'application/json',
-            authorization: authToken,
-          },
-        }
-      );
+      const response = await fetch(`${serverUrl}/todos/${task.id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          authorization: authToken,
+        },
+      });
       if (response.status === 200) {
         getData();
       }
