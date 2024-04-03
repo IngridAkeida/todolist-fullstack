@@ -35,6 +35,9 @@ const verifyToken = (req, res, next) => {
 app.get('/todos', async (req, res) => {
   const userEmail = req.userEmail;
 
+  if (!userEmail)
+    return res.status(401).send({ detail: 'Token not provided' });
+
   console.log('User Email:', userEmail);
 
   try {
