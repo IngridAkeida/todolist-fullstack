@@ -49,7 +49,7 @@ function App() {
         {authToken && (
           <>
             <ListHeader
-              listName={'Your ToDo List'}
+              listName={'📝 THINGS TO DO:'}
               getData={getData}
             />
             {sortedTasks?.map((task) => (
